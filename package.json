@@ -78,8 +78,5 @@
     "plugins": [
       "prettier-plugin-tailwindcss"
     ]
-  },
-  "trustedDependencies": [
-    "core-js-pure"
-  ]
+  }
 }
