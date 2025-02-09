@@ -15,10 +15,7 @@ import { MultisigMemberList } from "../components/MultisigMemberList";
 import { useMultisigMembers } from "../hooks/useMultisigMembers";
 
 const DELEGATION_DESCRIPTION =
-  // "Proposals submitted to the community can be vetoed by token holders. Additionally, token holders can opt to delegate their voting power to delegates.";
-  "List of all members who have successfully registered to InsuranceDAO";
-const SECURITY_COUNCIL_DESCRIPTION =
-  "Proposals are created by the Security Council. When its members approve one, the proposal is forwarded to the community veto phase for ratification.";
+  "List of all members who have successfully registered to InsuranceDAO. Additionally, token holders can opt to delegate their voting power to delegates.";
 
 export default function MembersList() {
   const { open } = useWeb3Modal();
@@ -40,25 +37,7 @@ export default function MembersList() {
       <div className="flex w-full max-w-[1280] flex-col gap-x-10 gap-y-8 lg:flex-row">
         <div className="flex flex-1 flex-col gap-y-6">
           <div className="flex items-start justify-between">
-            <If some={[toggleValue === "all", toggleValue === "verified"]}>
-              <Then>
-                <Heading size="h1">Delegates</Heading>
-              </Then>
-              <Else>
-                <Heading size="h1">Security council</Heading>
-              </Else>
-            </If>
-
-            <ToggleGroup
-              isMultiSelect={false}
-              onChange={onToggleChange}
-              value={toggleValue}
-              className="flex justify-end"
-            >
-              <Toggle value="all" label="Registered" className="rounded-lg" />
-              {/* <Toggle value="verified" label="Verified" className="rounded-lg" />
-              <Toggle value="multisig" label="Security council" className="rounded-lg" /> */}
-            </ToggleGroup>
+            <Heading size="h1">Delegates</Heading>
           </div>
           <If some={[toggleValue === "all", toggleValue === "verified"]}>
             <Then>
@@ -72,14 +51,7 @@ export default function MembersList() {
         <aside className="flex w-full flex-col gap-y-4 lg:max-w-[280px] lg:gap-y-6">
           <div className="flex flex-col gap-y-3">
             <Heading size="h3">Details</Heading>
-            <If some={[toggleValue === "all", toggleValue === "verified"]}>
-              <Then>
-                <p className="text-neutral-500">{DELEGATION_DESCRIPTION}</p>
-              </Then>
-              <Else>
-                <p className="text-neutral-500">{SECURITY_COUNCIL_DESCRIPTION}</p>
-              </Else>
-            </If>
+            <p className="text-neutral-500">{DELEGATION_DESCRIPTION}</p>
           </div>
           <dl className="divide-y divide-neutral-100">
             {/* <div className="flex flex-col items-baseline gap-y-2 py-3 lg:gap-x-6 lg:py-4">

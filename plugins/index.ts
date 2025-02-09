@@ -31,7 +31,7 @@ export const plugins: PluginItem[] = [
   {
     id: "token-voting",
     folderName: "tokenVoting",
-    title: "Token Voting",
+    title: "Proposals",
     // icon: IconType.BLOCKCHAIN_BLOCKCHAIN,
     pluginAddress: PUB_TOKEN_VOTING_PLUGIN_ADDRESS,
   },

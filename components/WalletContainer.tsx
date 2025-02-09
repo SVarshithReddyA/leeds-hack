@@ -12,7 +12,7 @@ import { mainnet } from "wagmi/chains";
 const config = createConfig({
   chains: [mainnet],
   ssr: true,
-  client({ chain }) {
+  client({ chain }: { chain: any }) {
     return createClient({
       chain,
       transport: http(`https://eth-mainnet.g.alchemy.com/v2/${PUB_ALCHEMY_API_KEY}`, { batch: true }),

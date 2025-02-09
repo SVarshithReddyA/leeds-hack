@@ -7,18 +7,21 @@ import { MobileNavDialog } from "./mobileNavDialog";
 import { NavLink, type INavLink } from "./navLink";
 import { AvatarIcon, IconType } from "@aragon/ods";
 import { PUB_APP_NAME, PUB_PROJECT_LOGO } from "@/constants";
+import { useAccount } from "wagmi";
 
 export const Navbar: React.FC = () => {
   const [showMenu, setShowMenu] = useState(false);
-
+  const { isConnected } = useAccount();
   const navLinks: INavLink[] = [
     { path: "/", id: "dashboard", name: "Dashboard" /*, icon: IconType.APP_DASHBOARD*/ },
-    ...plugins.map((p) => ({
-      id: p.id,
-      name: p.title,
-      path: `/plugins/${p.id}/#/`,
-      // icon: p.icon,
-    })),
+    ...(isConnected
+      ? plugins.map((p) => ({
+          id: p.id,
+          name: p.title,
+          path: `/plugins/${p.id}/#/`,
+          // icon: p.icon,
+        }))
+      : []),
   ];
 
   return (

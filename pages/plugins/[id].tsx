@@ -11,7 +11,6 @@ const PluginLoader: FC = () => {
   const pluginId = resolveQueryParam(query.id);
   const [PageComponent, setPageComponent] = useState<FC | null>(null);
   const [componentLoading, setComponentLoading] = useState(true);
-
   useEffect(() => {
     if (!pluginId) return;
 
