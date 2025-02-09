@@ -15,7 +15,8 @@ import { MultisigMemberList } from "../components/MultisigMemberList";
 import { useMultisigMembers } from "../hooks/useMultisigMembers";
 
 const DELEGATION_DESCRIPTION =
-  "Proposals submitted to the community can be vetoed by token holders. Additionally, token holders can opt to delegate their voting power to delegates.";
+  // "Proposals submitted to the community can be vetoed by token holders. Additionally, token holders can opt to delegate their voting power to delegates.";
+  "List of all members who have successfully registered to InsuranceDAO";
 const SECURITY_COUNCIL_DESCRIPTION =
   "Proposals are created by the Security Council. When its members approve one, the proposal is forwarded to the community veto phase for ratification.";
 
@@ -55,8 +56,8 @@ export default function MembersList() {
               className="flex justify-end"
             >
               <Toggle value="all" label="Registered" className="rounded-lg" />
-              <Toggle value="verified" label="Verified" className="rounded-lg" />
-              <Toggle value="multisig" label="Security council" className="rounded-lg" />
+              {/* <Toggle value="verified" label="Verified" className="rounded-lg" />
+              <Toggle value="multisig" label="Security council" className="rounded-lg" /> */}
             </ToggleGroup>
           </div>
           <If some={[toggleValue === "all", toggleValue === "verified"]}>
