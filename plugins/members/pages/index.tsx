@@ -81,7 +81,7 @@ export default function MembersList() {
             </If>
           </div>
           <dl className="divide-y divide-neutral-100">
-            <div className="flex flex-col items-baseline gap-y-2 py-3 lg:gap-x-6 lg:py-4">
+            {/* <div className="flex flex-col items-baseline gap-y-2 py-3 lg:gap-x-6 lg:py-4">
               <dt className="line-clamp-1 shrink-0 text-lg leading-tight text-neutral-800 lg:line-clamp-6 lg:w-40">
                 About the project
               </dt>
@@ -90,7 +90,7 @@ export default function MembersList() {
                   Learn more about {PUB_APP_NAME}
                 </a>
               </dd>
-            </div>
+            </div> */}
             <If some={[toggleValue === "all", toggleValue === "verified"]}>
               <Then>
                 <div className="flex flex-col items-baseline gap-y-2 py-3 lg:gap-x-6 lg:py-4">

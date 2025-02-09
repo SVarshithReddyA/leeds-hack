@@ -72,6 +72,8 @@ export function useProposal(proposalId: number, autoRefresh = false) {
       .catch((err) => {
         console.error("Could not fetch the proposal details", err);
       });
+    console.log("Metadata Content:", metadataContent);
+    console.log("Metadata Error:", metadataError);
   }, [proposalData?.tally.yes, proposalData?.tally.no, proposalData?.tally.abstain, !!publicClient]);
 
   // JSON metadata
@@ -82,6 +84,7 @@ export function useProposal(proposalId: number, autoRefresh = false) {
   } = useMetadata<ProposalMetadata>(metadataUri);
 
   const proposal = arrangeProposalData(proposalData, proposalCreationEvent, metadataContent);
+  console.log("Metadata Content:", metadataContent);
 
   return {
     proposal,
