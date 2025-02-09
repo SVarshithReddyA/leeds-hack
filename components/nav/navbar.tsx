@@ -22,6 +22,7 @@ export const Navbar: React.FC = () => {
           // icon: p.icon,
         }))
       : []),
+    ...(isConnected ? [{ path: "/meetings", id: "meetings", name: "Meetings" }] : []),
   ];
 
   return (
