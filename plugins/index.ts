@@ -56,13 +56,13 @@ export const plugins: PluginItem[] = [
   //   // icon: IconType.BLOCKCHAIN_BLOCKCHAIN,
   //   pluginAddress: PUB_OPT_MULTISIG_PLUGIN_ADDRESS,
   // },
-  {
-    id: "emergency",
-    folderName: "emergency-multisig",
-    title: "Emergency",
-    // icon: IconType.BLOCKCHAIN_BLOCKCHAIN,
-    pluginAddress: PUB_EMERGENCY_MULTISIG_PLUGIN_ADDRESS,
-  },
+  // {
+  //   id: "emergency",
+  //   folderName: "emergency-multisig",
+  //   title: "Emergency",
+  //   // icon: IconType.BLOCKCHAIN_BLOCKCHAIN,
+  //   pluginAddress: PUB_EMERGENCY_MULTISIG_PLUGIN_ADDRESS,
+  // },
   {
     id: "members",
     folderName: "members",

@@ -172,9 +172,6 @@ export default function ProposalDetail({ index: proposalIdx }: { index: number }
             />
             <ProposalActions actions={proposal.actions} />
           </div>
-          <div className="flex flex-col gap-y-6 md:w-[33%]">
-            <CardResources resources={proposal.resources} title="Resources" />
-          </div>
         </div>
       </div>
       <VoteOptionDialog show={showVotingModal} onClose={onVote} />
